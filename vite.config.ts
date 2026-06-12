@@ -7,6 +7,7 @@ export default {
   base: "/ankaosint/",
 }
 
+
 function expressPlugin(): Plugin {
   return {
     name: "express-plugin",
