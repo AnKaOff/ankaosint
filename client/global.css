@@ -1,0 +1,182 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /**
+   * Tailwind CSS theme
+   * tailwind.config.ts expects the following color variables to be expressed as HSL values.
+   * A different format will require also updating the theme in tailwind.config.ts.
+  */
+  :root {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 30%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 100%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 0% 100%;
+  }
+
+  .dark {
+    --background: 0 0% 5%;
+    --foreground: 0 0% 100%;
+
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 0%;
+
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 100%;
+
+    --muted: 0 0% 30%;
+    --muted-foreground: 0 0% 70%;
+
+    --accent: 0 0% 100%;
+    --accent-foreground: 0 0% 0%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 0 0% 20%;
+    --input: 0 0% 15%;
+    --ring: 0 0% 100%;
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 100%;
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 0%;
+    --sidebar-accent: 0 0% 20%;
+    --sidebar-accent-foreground: 0 0% 100%;
+    --sidebar-border: 0 0% 20%;
+    --sidebar-ring: 0 0% 100%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    @apply dark;
+  }
+
+  body {
+    @apply bg-black text-foreground;
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
+
+@layer components {
+  .input-cyber {
+    @apply bg-black border border-white/20 text-white placeholder-gray-500 focus:border-white focus:shadow-lg focus:shadow-white/30 transition-all;
+  }
+
+  .button-primary {
+    @apply bg-white text-black hover:bg-gray-100 font-semibold px-6 py-3 rounded-lg transition-all duration-300 shadow-lg hover:shadow-2xl;
+  }
+
+  .breach-badge-active {
+    @apply bg-red-950/50 border border-red-400/50 text-red-200 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  .breach-badge-safe {
+    @apply bg-green-950/50 border border-green-400/50 text-green-200 px-3 py-1 rounded-full text-xs font-semibold;
+  }
+
+  /* Glow text effects */
+  .text-glow-green {
+    color: #4ade80;
+    text-shadow: 0 0 10px #4ade80, 0 0 20px #16a34a;
+    animation: text-glow 2s ease-in-out infinite;
+  }
+
+  .text-glow-blue {
+    color: #60a5fa;
+    text-shadow: 0 0 10px #60a5fa, 0 0 20px #1e40af;
+    animation: text-glow 2s ease-in-out infinite;
+  }
+
+  .text-glow-purple {
+    color: #c084fc;
+    text-shadow: 0 0 10px #c084fc, 0 0 20px #7e22ce;
+    animation: text-glow 2s ease-in-out infinite;
+  }
+
+  .text-glow-red {
+    color: #f87171;
+    text-shadow: 0 0 10px #f87171, 0 0 20px #dc2626;
+    animation: text-glow 2s ease-in-out infinite;
+  }
+
+  .text-glow-yellow {
+    color: #fbbf24;
+    text-shadow: 0 0 10px #fbbf24, 0 0 20px #d97706;
+    animation: text-glow 2s ease-in-out infinite;
+  }
+
+  .text-glow-cyan {
+    color: #22d3ee;
+    text-shadow: 0 0 10px #22d3ee, 0 0 20px #0891b2;
+    animation: text-glow 2s ease-in-out infinite;
+  }
+
+  /* Button with glow */
+  .btn-glow {
+    @apply shadow-lg transition-all duration-300;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+  }
+
+  .btn-glow:hover {
+    box-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+  }
+}
